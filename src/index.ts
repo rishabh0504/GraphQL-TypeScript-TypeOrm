@@ -4,13 +4,16 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
+import dotenv from "dotenv";
 
 (async () => {
+  dotenv.config()
   const app = express();
 
   const options = await getConnectionOptions(
-    process.env.NODE_ENV || "development"
+    process.env.NODE_ENV || "DEVELOPMENT"
   );
+
   await createConnection({ ...options, name: "default" });
 
   const apolloServer = new ApolloServer({
