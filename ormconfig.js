@@ -1,13 +1,13 @@
 module.exports = [
   {
-    name: "development",
+    name: "DEVELOPMENT",
     "type": "mysql",
     "host": "localhost",
     "port": 3308,
     "username": "root",
     "password": null,
     "database": "graphqlcrud",
-    "synchronize": true,
+    "synchronize": false,
     "logging": true,
     entities: ["src/entity/**/*.ts"],
     migrations: ["src/migration/**/*.ts"],
@@ -19,7 +19,7 @@ module.exports = [
     }
   },
   {
-    name: "production",
+    name: "PRODUCTION",
     type: "postgres",
     url: process.env.DATABASE_URL,
     synchronize: true, // switch this to false once you have the initial tables created and use migrations instead

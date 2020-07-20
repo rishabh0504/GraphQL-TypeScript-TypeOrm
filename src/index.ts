@@ -5,6 +5,9 @@ import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
 import dotenv from "dotenv";
+import { RoleResolver } from "./resolvers/RoleResolver";
+
+
 
 (async () => {
   dotenv.config()
@@ -18,7 +21,7 @@ import dotenv from "dotenv";
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloWorldResolver],
+      resolvers: [HelloWorldResolver, RoleResolver],
       validate: true
     }),
     context: ({ req, res }) => ({ req, res })
