@@ -3,3 +3,4 @@ dist
 database.sqlite
 yarn.lock
 package-lock.json
+.vscode

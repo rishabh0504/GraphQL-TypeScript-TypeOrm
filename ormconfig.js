@@ -7,7 +7,7 @@ module.exports = [
     "username": "root",
     "password": null,
     "database": "graphqlcrud",
-    "synchronize": false,
+    "synchronize": true,
     "logging": true,
     entities: ["src/entity/**/*.ts"],
     migrations: ["src/migration/**/*.ts"],
@@ -22,7 +22,7 @@ module.exports = [
     name: "PRODUCTION",
     type: "postgres",
     url: process.env.DATABASE_URL,
-    synchronize: true, // switch this to false once you have the initial tables created and use migrations instead
+    synchronize: false, // switch this to false once you have the initial tables created and use migrations instead
     logging: false,
     entities: ["dist/entity/**/*.js"],
     migrations: ["dist/migration/**/*.js"],
